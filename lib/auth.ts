@@ -4,13 +4,18 @@ import { db } from "@/lib/db";
 
 export const auth = betterAuth({
   trustedOrigins: ["http://localhost:3000", process.env.NEXT_PUBLIC_APP_URL!],
-  database: prismaAdapter(db, { provider: "postgresql" }),
+
+  database: prismaAdapter(db, {
+    provider: "postgresql",
+  }),
+
   emailAndPassword: {
     enabled: true,
   },
-  secret:
-    process.env.BETTER_AUTH_SECRET ?? "along-development-secret-change-me",
-  baseURL: process.env.BETTER_AUTH_URL ?? "http://localhost:3000",
+
+  secret: process.env.BETTER_AUTH_SECRET!,
+
+  baseURL: process.env.BETTER_AUTH_URL!,
 });
 
 export type CurrentUserDTO = {
