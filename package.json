@@ -7,12 +7,19 @@
     "build": "next build",
     "start": "next start",
     "lint": "biome check",
-    "format": "biome format --write"
+    "format": "biome format --write",
+    "postinstall": "prisma skills sync || exit 0"
   },
   "dependencies": {
+    "@better-auth/prisma-adapter": "^1.7.7",
+    "@prisma/adapter-pg": "^7.10.0",
+    "@prisma/client": "^6.19.0",
+    "better-auth": "^1.7.7",
     "next": "16.3.8",
+    "pg": "^8.23.1",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.2",
@@ -20,6 +27,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "prisma": "6.19.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   },
