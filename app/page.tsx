@@ -7,6 +7,7 @@ import {
 import { getDashboardForUser } from "@/features/dashboard/service";
 import { listWorkspaceUsersForUser } from "@/features/project/service";
 import { requireCurrentUser } from "@/lib/current-user";
+import { LogOut } from 'lucide-react';
 
 function formatDate(value: string) {
   return new Date(value).toLocaleDateString("en-US", {
@@ -68,7 +69,7 @@ export default async function Home() {
             </span>
             <form action={signOut}>
               <button className="more" type="submit" aria-label="Sign out">
-                ...
+                <LogOut />
               </button>
             </form>
           </div>
